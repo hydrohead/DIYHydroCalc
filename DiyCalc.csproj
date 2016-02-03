@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{4029563D-E56A-4EB1-9C20-E781D445847D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DiyCalc</RootNamespace>
+    <AssemblyName>DiyCalc</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="Custom" name="Deploy" command="deploy.sh" workingdir="${ProjectDir}" externalConsole="True" pauseExternalConsole="True" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <None Include="DiyCalc.csproj" />
+    <None Include="LICENSE" />
+    <None Include="README.md" />
+    <None Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="apple-touch-icon-precomposed.png" />
+    <Content Include="index.html" />
+    <Content Include="css\main.css" />
+    <Content Include="js\main.js" />
+    <Content Include="partials\404.html" />
+    <Content Include="partials\about.html" />
+    <Content Include="partials\blog.html" />
+    <Content Include="partials\blog_item.html" />
+    <Content Include="partials\contact.html" />
+    <Content Include="partials\faq.html" />
+    <Content Include="partials\home.html" />
+    <Content Include="partials\pricing.html" />
+    <Content Include="partials\services.html" />
+    <Content Include="templates\footer.html" />
+    <Content Include="templates\header.html" />
+  </ItemGroup>
+</Project>

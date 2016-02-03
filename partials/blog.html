@@ -1,0 +1,63 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">Blog Home 2 - {{substances["Boric Acid"].B}}  {{test}}
+                <small>Blog Homepage</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a>
+                </li>
+                <li class="active">Blog Home 2</li>
+            </ol>
+        </div>
+
+    </div>
+    <div  ng-show="showElements">
+      <label for="gallons">Total Gallons</label>
+      <input type="number" id="gallons" ng-model="gallons">
+
+  
+   <div class="table-responsive">
+   <table class="table">
+    <tr>
+    <th>Element</th>
+    <th>Desired Ppm (mg/L)</th>
+    <th>Actuals mg/L</th>
+    </tr>
+    <tr ng-repeat="element in elements">
+    <td>{{element.Name}} - typical: {{element.WarnBelow}} - {{element.WarnAbove}}</td>
+    <td> <input type="number" ng-model="element.TargetQuantity"></td>
+      <td>{{element.ActualQuantity | number : 3}}</td>
+        </tr>
+    </table>
+    <button  ng-show="showElements" ng-click="calcWeights()">Calculate</button>
+    </div>
+    </div>
+   <div ng-hide="showElements" class="table-responsive">
+    <button  ng-click="changeshowElements(true)">Show Elements</button>
+
+      <table class="table">
+    <tr>
+    <th>Substance</th>
+    <th>Weight To Add (grams)</th>
+    <th>Teaspoons (Appx)</th>
+    <th>Cups (Appx)</th>
+
+    </tr>
+    <tr ng-repeat="substance in substances">
+    <td>{{substance.Name}}</td>
+    <td> {{substance.CalculatedAmount | number : 1}}</td>
+     <td> {{substance.CalculatedAmount / substance.DensityGramsPerCC / CCPerTeaspoon | number : 3}}</td>
+     <td> {{substance.CalculatedAmount / substance.DensityGramsPerCC / CCPerCup | number : 3}}</td>
+
+
+    </tr>
+    </table>
+    </div>
+
+   
+
+</div>
+<!-- /.container -->
